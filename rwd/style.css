@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+/* hp max- widht :600px*/
+body{
+    background-color: lightblue;
+}
+
+img{
+    width: 100%;
+}
+
+.padding-10{
+    padding: 10px;
+}
+
+/* clear float cloum */
+
+.row{
+    clear: both;
+}
+
+.col-hp-100{
+    width: 100%;
+    float: left;
+}
+
+/* tablet */
+@media screen and (min-width: 600px) {
+    /* elemnet selector body*/
+    body{
+        background-color: lightgoldenrodyellow;
+    }
+    .col-md-50{
+        width: 50%;
+        float: left;
+    }
+}
+
+/* desktop*/
+@media screen and (min-width: 992px){
+    /* elemnet selector body*/
+    body{
+        background-color: skyblue;
+    }
+    /* class selestor*/
+    .col-lg-25{
+        width: 25%;
+        float: left ;
+
+    }
+}
