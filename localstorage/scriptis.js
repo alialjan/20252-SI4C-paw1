@@ -1,6 +1,6 @@
 let npm = document.getElementById("npm");
 let nama = document.getElementById("nama");
-
+let image = document.getElementById("imageURl");
 function simpan(){
     console.log(npm.value)
     console.log(nama.value)
@@ -21,7 +21,9 @@ function simpan(){
     //simpan value npm dan nama ke dalam object data
     data.push({
         npm: npm.value,
-        nama: nama.value
+        nama: nama.value,
+        image: image.value
+
     })
     console.log(data)
 
@@ -36,14 +38,16 @@ function simpan(){
 function tampil(){
     //panggil local storage
     let hasil = JSON.parse(localStorage.getItem("mahasiswa"))
+    //clear element ul id = list-mhs
+    document.getElementById("list-mhs").innerHTML = ""
 
     //lakukan perulangan menggunkan  forEach
     hasil.forEach(element => {
         //console.log(element)
-        document.getElementById("list-mhs").innerHTML += `<li>${element.npm} ${element.nama}</li>`
+        document.getElementById("list-mhs").innerHTML += `<div class ="col-lg-4 col-md-6" >
+        <img class="img fluid" src="${element.image}" /><class ="text-primary">${element.nama}</><h6 class ="text-danger"> ${element.npm}</h6> 
+        </div>`
         
-//clear element ul id = list-mhs
-document.getElementById("list-mhs").innerHTML = ""
 
     });
 }
